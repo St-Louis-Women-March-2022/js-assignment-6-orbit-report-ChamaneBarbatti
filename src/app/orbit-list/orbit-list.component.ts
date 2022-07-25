@@ -13,6 +13,7 @@ export class OrbitListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+	console.log(this.satellites);
   }
 
 	sort(column: string): void {
@@ -27,4 +28,8 @@ export class OrbitListComponent implements OnInit {
 		});
 	}
 
+	isSpaceDebris(satellite){
+		let satellitemethod = new Satellite(satellite.name, satellite.type, satellite.launchDate, satellite.orbitType, satellite.operational);
+		return satellitemethod.isSpaceDebris();
+	}
 }
